@@ -1,0 +1,401 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="keywords" content="Cultivation Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design"/>
+    <title>机械—黄酒菌种数据库</title>
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
+    <link href="css/style.css" rel="stylesheet" type="text/css" media="all"/>
+    <link rel="stylesheet" href="css/jquery-ui.min.css">
+    <script src="js/jquery-1.12.2.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/papaparse.min.js" type="application/javascript"></script>
+    <script src="js/echarts.min.js"></script>
+    <script src="js/dataTool.js"></script>
+    <script src="js/datavisual.js"></script>
+    <script type="application/x-javascript"> addEventListener("load", function () {
+        setTimeout(hideURLbar, 0);
+    }, false);
+    function hideURLbar() {
+        window.scrollTo(0, 1);
+    } </script>
+    <!---- start-smoth-scrolling---->
+    <script type="text/javascript" src="js/move-top.js"></script>
+    <script type="text/javascript" src="js/easing.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+                $('html,body').animate({scrollTop: $(this.hash).offset().top}, 1200);
+            });
+        });
+    </script>
+    <!---End-smoth-scrolling---->
+    <link rel="stylesheet" href="css/swipebox.css">
+    <script src="js/jquery.swipebox.min.js"></script>
+    <script type="text/javascript">
+        jQuery(function ($) {
+            $(".swipebox").swipebox();
+        });
+    </script>
+    <!--Animation-->
+    <script src="js/wow.min.js"></script>
+    <link href="css/animate.css" rel='stylesheet' type='text/css'/>
+    <script>
+        new WOW().init();
+    </script>
+    <!---/End-Animation---->
+</head>
+<body>
+<div class="header head-top" id="home">
+    <div class="container">
+        <div class="header-top">
+            <div class="top-menu">
+                <span class="menu"><img src="images/nav.png" alt=""/> </span>
+                <ul>
+                    <li><a href="index.html">首页</a></li>
+                    <label>/</label>
+                    <li><a href="yeast.html">酒母</a></li>
+                    <label>/</label>
+                    <li><a href="manual.html">手工黄酒</a></li>
+                    <label>/</label>
+                    <li><a href="machine.html"  class="active">机械黄酒</a></li>
+                </ul>
+                <!-- script for menu -->
+
+                <script>
+                    $("span.menu").click(function () {
+                        $(".top-menu ul").slideToggle("slow", function () {
+                        });
+                    });
+                </script>
+                <!-- //script for menu -->
+            </div>
+            <label>细菌：</label>
+            <div class="search">
+                <form>
+                    <input type="text" id="autocomplete" value="搜索细菌.." onfocus="this.value = '';"
+                           onblur="if (this.value == '') {this.value = '';}">
+                    <script>
+                        //      搜索框自动补全功能
+                        var genus = [
+                            'Gp16',
+                            'Gp2',
+                            'Gp3',
+                            'Gp4',
+                            'Gp6',
+                            'Ilumatobacter',
+                            'Iamia',
+                            'Actinomyces',
+                            'Brevibacterium',
+                            'Corynebacterium',
+                            'Brachybacterium',
+                            'Dermacoccus',
+                            'Dietzia',
+                            'Blastococcus',
+                            'Arsenicicoccus',
+                            'Agromyces',
+                            'Curtobacterium',
+                            'Microbacterium',
+                            'Arthrobacter',
+                            'Kocuria',
+                            'Rothia',
+                            'Sinomonas',
+                            'Micromonospora',
+                            'Mycobacterium',
+                            'Nakamurella',
+                            'Gordonia',
+                            'Rhodococcus',
+                            'Williamsia',
+                            'Actinopolymorpha',
+                            'Aeromicrobium',
+                            'Nocardioides',
+                            'Cellulosimicrobium',
+                            'Brooklawnia',
+                            'Luteococcus',
+                            'Micropruina',
+                            'Propionibacterium',
+                            'Tessaracoccus',
+                            'Actinomycetospora',
+                            'Amycolatopsis',
+                            'Prauserella',
+                            'Pseudonocardia',
+                            'Saccharomonospora',
+                            'Saccharopolyspora',
+                            'Sciscionella',
+                            'Streptomyces',
+                            'Nonomuraea',
+                            'Actinomadura',
+                            'Bifidobacterium',
+                            'Conexibacter',
+                            'Armatimonadetes_gp1',
+                            'Armatimonadetes_gp4',
+                            'Paludibacter',
+                            'Parabacteroides',
+                            'Prevotella',
+                            'Dyadobacter',
+                            'Emticicia',
+                            'Flectobacillus',
+                            'Hymenobacter',
+                            'Fluviicola',
+                            'Chryseobacterium',
+                            'Cloacibacterium',
+                            'Elizabethkingia',
+                            'Epilithonimonas',
+                            'Flavobacterium',
+                            'Myroides',
+                            'Wautersiella',
+                            'Chitinophaga',
+                            'Flavisolibacter',
+                            'Flavitalea',
+                            'Niabella',
+                            'Sediminibacterium',
+                            'Terrimonas',
+                            'Arcticibacter',
+                            'Mucilaginibacter',
+                            'Olivibacter',
+                            'Parapedobacter',
+                            'Pedobacter',
+                            'Sphingobacterium',
+                            'Saccharibacteria_genera_incertae_sedis',
+                            'Parachlamydia',
+                            'Litorilinea',
+                            'Sphaerobacter',
+                            'Bacillariophyta',
+                            'Streptophyta',
+                            'GpVI',
+                            'Deinobacterium',
+                            'Deinococcus',
+                            'Truepera',
+                            'Thermus',
+                            'Bacillus',
+                            'Oceanobacillus',
+                            'Terribacillus',
+                            'Virgibacillus',
+                            'Exiguobacterium',
+                            'Brochothrix',
+                            'Listeria',
+                            'Brevibacillus',
+                            'Cohnella',
+                            'Paenibacillus',
+                            'Saccharibacillus',
+                            'Aneurinibacillus',
+                            'Chryseomicrobium',
+                            'Kurthia',
+                            'Lysinibacillus',
+                            'Planococcus',
+                            'Jeotgalicoccus',
+                            'Macrococcus',
+                            'Staphylococcus',
+                            'Kroppenstedtia',
+                            'Laceyella',
+                            'Shimazuella',
+                            'Thermoactinomyces',
+                            'Aerococcus',
+                            'Globicatella',
+                            'Carnobacterium',
+                            'Trichococcus',
+                            'Bavariicoccus',
+                            'Enterococcus',
+                            'Vagococcus',
+                            'Lactobacillus',
+                            'Pediococcus',
+                            'Leuconostoc',
+                            'Weissella',
+                            'Lactococcus',
+                            'Streptococcus',
+                            'Clostridium_sensu_stricto',
+                            'Gallicola',
+                            'Garciella',
+                            'Clostridium_XlVa',
+                            'Clostridium_XI',
+                            'Megasphaera',
+                            'Pectinatus',
+                            'Veillonella',
+                            'Gemmatimonas',
+                            'Nitrospira',
+                            'Aquisphaera',
+                            'Rhizomicrobium',
+                            'Brevundimonas',
+                            'Caulobacter',
+                            'Phenylobacterium',
+                            'Aurantimonas',
+                            'Bosea',
+                            'Rhodopseudomonas',
+                            'Ochrobactrum',
+                            'Devosia',
+                            'Hyphomicrobium',
+                            'Rhodoplanes',
+                            'Methylobacterium',
+                            'Microvirga',
+                            'Mesorhizobium',
+                            'Kaistia',
+                            'Rhizobium',
+                            'Parvibaculum',
+                            'Paracoccus',
+                            'Rubellimicrobium',
+                            'Acetobacter',
+                            'Gluconobacter',
+                            'Roseomonas',
+                            'Azospirillum',
+                            'Magnetospirillum',
+                            'Elioraea',
+                            'Novosphingobium',
+                            'Sphingobium',
+                            'Sphingomonas',
+                            'Sphingopyxis',
+                            'Alcaligenes',
+                            'Castellaniella',
+                            'Burkholderia',
+                            'Cupriavidus',
+                            'Limnobacter',
+                            'Polynucleobacter',
+                            'Ralstonia',
+                            'Aquabacterium',
+                            'Acidovorax',
+                            'Comamonas',
+                            'Curvibacter',
+                            'Delftia',
+                            'Hydrogenophaga',
+                            'Limnohabitans',
+                            'Polaromonas',
+                            'Duganella',
+                            'Massilia',
+                            'Undibacterium',
+                            'Thiobacillus',
+                            'Aquitalea',
+                            'Paludibacterium',
+                            'Vogesella',
+                            'Nitrosomonas',
+                            'Dechloromonas',
+                            'Methyloversatilis',
+                            'Thauera',
+                            'Zoogloea',
+                            'Bdellovibrio',
+                            'Vampirovibrio',
+                            'Desulfobulbus',
+                            'Desulfomicrobium',
+                            'Geobacter',
+                            'Cystobacter',
+                            'Corallococcus',
+                            'Phaselicystis',
+                            'Byssovorax',
+                            'Arcobacter',
+                            'Sulfurospirillum',
+                            'Sulfuricurvum',
+                            'Aeromonas',
+                            'Tolumonas',
+                            'Pseudoalteromonas',
+                            'Shewanella',
+                            'Rheinheimera',
+                            'Cronobacter',
+                            'Proteus',
+                            'Providencia',
+                            'Serratia',
+                            'Aquicella',
+                            'Legionella',
+                            'Halomonas',
+                            'Haemophilus',
+                            'Acinetobacter',
+                            'Enhydrobacter',
+                            'Psychrobacter',
+                            'Azotobacter',
+                            'Pseudomonas',
+                            'Vibrio',
+                            'Steroidobacter',
+                            'Dokdonella',
+                            'Ignatzschineria',
+                            'Lysobacter',
+                            'Pseudoxanthomonas',
+                            'Rhodanobacter',
+                            'Stenotrophomonas',
+                            'Thermomonas',
+                            'Turneriella',
+                            'Opitutus',
+                            'Subdivision3_genera_incertae_sedis',
+                            'Prosthecobacter',
+                        ];
+                        $("#autocomplete").autocomplete({
+                            //            首字母匹配
+                            source: function( request, response ) {
+                                var matcher = new RegExp("^" + $.ui.autocomplete.escapeRegex( request.term), "i");
+                                response($.grep(genus, function (item) {
+                                    return matcher.test(item)
+                                }))
+                            },
+                            select: function (event, ui) {
+                                var file_name = "./data/machine/Bacteria/" + ui.item.value + ".csv";
+                                var sam_days = ['0'];
+//                    var sam_days = ['1', '3'];
+                                boxplot(file_name, ui.item.value, sam_days);
+                            }
+                        });
+                    </script>
+                    <input type="submit" value="">
+                </form>
+            </div>
+            <div class="search">
+                <form>
+                    <input type="text" value="搜索真菌.." onfocus="this.value = '';"
+                           onblur="if (this.value == '') {this.value = '';}">
+                    <input type="submit" value="">
+                </form>
+            </div>
+
+            <div class="clearfix"></div>
+
+        </div>
+        <div class="logo logo1">
+            <a href="index.html">机械—菌种数据库</a>
+        </div>
+
+    </div>
+</div>
+<div class="content">
+    <div class="aboutus-section">
+        <div class="container">
+            <div id="main" style="width: 1000px;height:600px;"></div>
+
+        </div>
+    </div>
+</div>
+<div class="footer-section">
+    <div class="container">
+        <div class="footer-middle wow fadeInDown Big animated animated" data-wow-delay="0.4s">
+            <div class="bottom-menu">
+                <ul>
+                    <li><a href="index.html" class="active">首页</a></li>
+                    <li><a href="yeast.html">酒母</a></li>
+                    <li><a href="manual.html">手工黄酒</a></li>
+                    <li><a href="machine.html">机械黄酒</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom wow bounceInRight animated" data-wow-delay="0.4s"
+             style="visibility: visible; -webkit-animation-delay: 0.4s;">
+            <p>Copyright &copy; 2016.上海锐翌基因集团 版权所有.<a href="http://realbio.cn/"
+                                                      target="_blank" title="锐翌基因">锐翌官网</a>
+            </p>
+        </div>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                /*
+                 var defaults = {
+                 containerID: 'toTop', // fading element id
+                 containerHoverID: 'toTopHover', // fading element hover id
+                 scrollSpeed: 1200,
+                 easingType: 'linear'
+                 };
+                 */
+
+                $().UItoTop({easingType: 'easeOutQuart'});
+
+            });
+        </script>
+        <a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+    </div>
+</div>
+</body>
+</html>

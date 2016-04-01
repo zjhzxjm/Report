@@ -1,0 +1,15 @@
+Day,Quality,Sample,Abun
+0,intermediate,yeast.machine.1,0.000733333
+0,intermediate,yeast.machine.2,0.001095403
+0,intermediate,yeast.machine.3,0.002109486
+0,good,yeast.manual.1,0.00391581
+0,good,yeast.manual.10,0.002066667
+0,good,yeast.manual.11,0.003633333
+0,good,yeast.manual.2,0.004462324
+0,good,yeast.manual.3,0.002933333
+0,good,yeast.manual.4,0.000906497
+0,poor,yeast.manual.5,0.000433333
+0,poor,yeast.manual.6,0.000835003
+0,good,yeast.manual.7,0.000633333
+0,poor,yeast.manual.8,0.000856451
+0,poor,yeast.manual.9,0.000833333

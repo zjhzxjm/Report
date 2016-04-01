@@ -2,6 +2,8 @@
  * Created by admin on 2016/3/31.
  */
 function undefine2arr(arr) {
+    //空数组添加一个数组元素
+    //arr[0] = arr.length ? arr[0]:arr[0]=[];
     //将未定义的元素定义为数组
     for (var i= 0;i<arr.length;i++){
         arr[i] = arr[i] ? arr[i]:[]
@@ -12,14 +14,19 @@ function undefine2arr(arr) {
 function fishArr(all_arr,index_arr){
 //    根据index_arr数组中的索引在all_arr中选取元素并重新返回新的数组
     var arr = [];
-    all_arr = undefine2arr(all_arr);
+    //all_arr = undefine2arr(all_arr);
     index_arr.forEach(function(val,key){
         arr.push(all_arr[val]);
-       console.log(val);
+       //console.log(val);
     });
-    console.log("fishArr: " );
-    console.log(arr);
-    return arr;
+    //console.log("fishArr: " );
+    //console.log(arr);
+    return undefine2arr(arr);
+}
+
+function compareCanonically(a, b) {
+    //数值大小比较
+    return a < b ? -1:(a > b ? 1:0);
 }
 
 function boxplot(file_name, title, sam_days) {
@@ -27,11 +34,10 @@ function boxplot(file_name, title, sam_days) {
         download: true,
         header: true,
         complete: function(results) {
-            console.log(results.data);
+            //console.log(results.data);
             var goodData = [];
             var interData = [];
             var poorData = [];
-            var days = [];
             for (var i=0; i<results.data.length; i++){
                 var record = results.data[i];
                 //                    alert(record.Day);
@@ -53,11 +59,13 @@ function boxplot(file_name, title, sam_days) {
                         break;
                 }
             }
-            console.log(goodData);
+            //console.log(goodData);
             goodData = fishArr(goodData,sam_days);
             //console.log(goodData);
-            //interData = fishArr(interData,sam_days);
-            //poorData = fishArr(poorData,sam_days);
+            //console.log(interData);
+            interData = fishArr(interData,sam_days);
+            //console.log(interData);
+            poorData = fishArr(poorData,sam_days);
 
             //                箱型图生成
             // 基于准备好的dom，初始化echarts实例
@@ -65,12 +73,28 @@ function boxplot(file_name, title, sam_days) {
 
             // Generate data.
             data = [];
-
             data.push(echarts.dataTool.prepareBoxplotData(goodData));
-
             data.push(echarts.dataTool.prepareBoxplotData(interData));
-
             data.push(echarts.dataTool.prepareBoxplotData(poorData));
+            //console.log(data[0]);
+            var arr_min = [];
+            var arr_max = [];
+            data.forEach(function (val, key) {
+                //console.log(val);
+                val.boxData.forEach(function(val, key){
+                    //console.log(val)
+                    console.log(val.slice(0,1)[0]);
+                    val.slice(0,1)[0] ? arr_min.push(val.slice(0,1)[0]):0;
+                    val.slice(-1)[0] ? arr_max.push(val.slice(-1)[0]):0;
+                })
+            });
+            console.log(data)
+            console.log(arr_min);
+            var min = arr_min.sort(compareCanonically).slice(0,1);
+            console.log(min);
+            console.log(arr_max);
+            var max = arr_max.sort(compareCanonically).slice(-1);
+            console.log(max);
 
             option = {
                 title: {
@@ -95,7 +119,7 @@ function boxplot(file_name, title, sam_days) {
                 },
                 xAxis: {
                     type: 'category',
-                    data: ['1','2','4'],
+                    data: sam_days  ,
                     boundaryGap: true,
                     nameGap: 30,
                     splitArea: {
@@ -111,8 +135,8 @@ function boxplot(file_name, title, sam_days) {
                 yAxis: {
                     type: 'value',
                     name: 'Value',
-                    min: -0.2,
-                    max: 0.2,
+                    min: min,
+                    max: max,
                     splitArea: {
                         show: false
                     }
@@ -121,7 +145,7 @@ function boxplot(file_name, title, sam_days) {
                     {
                         type: 'inside',
                         start: 0,
-                        end: 20
+                        end: 100
                     },
                     {
                         show: true,
@@ -130,7 +154,7 @@ function boxplot(file_name, title, sam_days) {
                         top: '90%',
                         xAxisIndex: [0],
                         start: 0,
-                        end: 20
+                        end: 100
                     }
                 ],
                 series: [

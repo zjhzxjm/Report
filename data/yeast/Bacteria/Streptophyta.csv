@@ -1,0 +1,15 @@
+Quanlity,Day,Sample,Abun
+intermediate,0,yeast.machine.1,0.00445
+intermediate,0,yeast.machine.2,0.00265
+intermediate,0,yeast.machine.3,0.006104454
+good,0,yeast.manual.1,0.003475
+good,0,yeast.manual.10,0.00345
+good,0,yeast.manual.11,0.001275
+good,0,yeast.manual.2,0.00595
+good,0,yeast.manual.3,0.0046
+good,0,yeast.manual.4,0.00445
+poor,0,yeast.manual.5,0.0008
+poor,0,yeast.manual.6,0.001125
+good,0,yeast.manual.7,0.000725
+poor,0,yeast.manual.8,0.0002
+poor,0,yeast.manual.9,0.0004
