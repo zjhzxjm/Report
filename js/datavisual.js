@@ -342,6 +342,7 @@ function compareCanonically(a, b) {
 }
 
 function boxplot(file_name, title, sam_days) {
+    $("#main").width("1140").height("600");
     Papa.parse(file_name,{
         download: true,
         header: true,
