@@ -446,7 +446,7 @@ function boxplot(file_name, title, sam_days) {
                 },
                 yAxis: {
                     type: 'value',
-                    name: 'Value',
+                    name: 'Relative Abundance',
                     min: min,
                     max: max,
                     splitArea: {
@@ -501,6 +501,10 @@ function boxplot(file_name, title, sam_days) {
                     'upper: ' + param.data[4]
                 ].join('<br/>')
             }
+
+            myChart.on('click', function (param) {
+
+            });
 
             // 使用刚指定的配置项和数据显示图表。
             myChart.setOption(option);
