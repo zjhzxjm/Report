@@ -140,7 +140,22 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <div class="aboutus-section">
         <div class="container">
             <div id="main"></div>
-            <div id="hist" style="width: 1140px;height:1000px;"></div>
+            <div class="ui top attached tabular menu">
+                <a class="active item" data-tab="first">真菌</a>
+                <a class="item" data-tab="second">细菌</a>
+            </div>
+            <div class="ui bottom attached active tab segment" data-tab="first">
+                <div id="hist1" style="width: 1140px;height:1000px;"></div>
+            </div>
+            <div class="ui bottom attached tab segment" data-tab="second">
+                <div id="hist2" style="width: 1140px;height:1000px;"></div>
+            </div>
+            <script>
+                $('.menu .item')
+                        .tab()
+                ;
+            </script>
+
         </div>
     </div>
 </div>
@@ -181,8 +196,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     </div>
 </div>
 <script>
-    var myHist = echarts.init(document.getElementById('hist'));
-    option = {
+    var myHist1 = echarts.init(document.getElementById('hist1'));
+    option1 = {
         tooltip : {
             trigger: 'axis',
             axisPointer : {            // 坐标轴指示器，坐标轴触发有效
@@ -232,7 +247,59 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             }
         ]
     };
-    myHist.setOption(option);
+    myHist1.setOption(option1);
+
+    var myHist2 = echarts.init(document.getElementById('hist2'));
+    option2 = {
+        tooltip : {
+            trigger: 'axis',
+            axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+                type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+            }
+        },
+        legend: {
+            data:['好', '一般', '差']
+        },
+        grid: {
+            left: '3%',
+            right: '4%',
+            bottom: '3%',
+            containLabel: true
+        },
+        xAxis : [
+            {
+                type : 'value'
+            }
+        ],
+        yAxis : [
+            {
+                type : 'category',
+                axisTick : {show: false},
+                data : ['Enterococcus','Kocuria','Streptomyces','Leuconostoc','Bacillus','Pediococcus','Weissella','Staphylococcus','Saccharopolyspora','Lactobacillus']
+            }
+        ],
+        series : [
+            {
+                name:'好',
+                type:'bar',
+
+                data:[0.000657143,3.21429E-05,0.008464286,0.0188,0.021803571,0.008342857,0.004585714,0.012117857,0.340007143,0.548635714]
+            },
+            {
+                name:'一般',
+                type:'bar',
+
+                data:[0.011149986,0.013761913,0.018084593,0.004407805,0.018971289,0.073076041,0.105906693,0.215223745,0.418928462,0.070730185]
+            },
+            {
+                name:'差',
+                type:'bar',
+
+                data:[0.00006875,0,0.0010375,0.00568125,0.00223125,0.00434375,0.00608125,0.00400625,0.03384375,0.9359]
+            }
+        ]
+    };
+    myHist2.setOption(option2);
 </script>
 </body>
 </html> 
