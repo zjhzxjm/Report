@@ -145,10 +145,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <a class="item" data-tab="second">细菌</a>
             </div>
             <div class="ui bottom attached active tab segment" data-tab="first">
-                <div id="hist1" style="width: 1140px;height:1000px;"></div>
+                <div id="hist0a" style="width: 1140px;height:1000px;"></div>
             </div>
             <div class="ui bottom attached tab segment" data-tab="second">
-                <div id="hist2" style="width: 1140px;height:1000px;"></div>
+                <div id="hist0b" style="width: 1140px;height:1000px;"></div>
             </div>
             <script>
                 $('.menu .item')
@@ -196,8 +196,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     </div>
 </div>
 <script>
-    var myHist1 = echarts.init(document.getElementById('hist1'));
-    option1 = {
+    var myHist0a = echarts.init(document.getElementById('hist0a'));
+    option0a = {
         tooltip : {
             trigger: 'axis',
             axisPointer : {            // 坐标轴指示器，坐标轴触发有效
@@ -247,10 +247,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             }
         ]
     };
-    myHist1.setOption(option1);
+    myHist0a.setOption(option0a);
 
-    var myHist2 = echarts.init(document.getElementById('hist2'));
-    option2 = {
+    var myHist0b = echarts.init(document.getElementById('hist0b'));
+    option0b = {
         tooltip : {
             trigger: 'axis',
             axisPointer : {            // 坐标轴指示器，坐标轴触发有效
@@ -299,7 +299,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             }
         ]
     };
-    myHist2.setOption(option2);
+    myHist0b.setOption(option0b);
 </script>
 </body>
 </html> 
